@@ -30,6 +30,7 @@ export class Carro{
         let kmUpdate = rl.question('insira a km do carro')
         let marcaUpdate = rl.question('insira a marca do carro') 
 
+        
         this.tanque = tanqueUpdate
         this.km = kmUpdate
         this.marca = marcaUpdate

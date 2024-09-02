@@ -1,9 +1,9 @@
 var leitor = require('readline-sync')
 class Produto{
-     nome_produto: string
-     preco_produto: number
-     preco_fornecedor: number
-     marca_produto: string
+    nome_produto: string
+    preco_produto: number
+    preco_fornecedor: number
+    marca_produto: string
 
     constructor(nome_produto: string, preco_produto: number, preco_fornecedor: number, marca_produto: string){
         this.nome_produto = nome_produto
@@ -12,7 +12,7 @@ class Produto{
         this.marca_produto = marca_produto
     }
 
-     getProdutos(): void{
+    getProdutos(): void{
         console.log(`   Nome do Produto: ${this.nome_produto};
                         Marca do Produto: ${this.marca_produto};
                         Preço do Produto: ${this.preco_produto};
@@ -39,10 +39,10 @@ class Produto{
 }
 
 class Venda{
-    private produto: Produto
-    private quantidade: number
-    private valor_total: number
-    private data: string
+    produto: Produto
+    quantidade: number
+    valor_total: number
+    data: string
 
     constructor(produto: Produto, quantidade: number, data: string){
         this.produto = produto
@@ -51,14 +51,14 @@ class Venda{
         this.data = data
     }
 
-     getVenda(): void{
+    getVenda(): void{
         console.log(`   Nome do Produto: ${this.produto.nome_produto}
                         Quantidade de Produto: ${this.quantidade}
                         Valor Total da Venda: ${this.valorVenda()}
                         Data da Venda: ${this.data}`);
     }
 
-     setVenda(): void{
+    setVenda(): void{
         let produtoOuNao = leitor.question("Você gostaria de modificar o produto da venda? (s/n): ").toLowerCase()
         if(produtoOuNao == "s"){
             this.produto.setProdutos()
@@ -92,7 +92,7 @@ class Venda{
         }
     }
 
-     valorVenda(): number{
+    valorVenda(): number{
         return this.quantidade * this.produto.preco_produto
     }
 
@@ -130,5 +130,3 @@ console.log("Mostrar descontos: ");
 
 //vendaUm.desconto()
 vendaTV.desconto()
-
-
